@@ -1,0 +1,9 @@
+2025-08-11 21:34:30,378 - ERROR - Error al crear el pool: connection to server at "localhost" (::1), port 5432 failed: FATAL:  role "root" does not exist
+
+2025-08-11 21:42:41,115 - ERROR - Error al crear el pool: connection to server at "localhost" (::1), port 5432 failed: FATAL:  role "root" does not exist
+
+2025-08-11 21:44:21,662 - DEBUG - Pool de conexiones creado exitosamente.
+2025-08-11 21:44:21,665 - DEBUG - Usuario insertado: Usuario (id: None, username: merce123)
+2025-08-11 21:44:21,666 - DEBUG - Commit exitoso.
+2025-08-11 21:44:26,759 - DEBUG - Usuarios seleccionados: [<modelos.usuario.Usuario object at 0x000002172F362350>]
+2025-08-11 21:44:26,761 - DEBUG - Commit exitoso.
