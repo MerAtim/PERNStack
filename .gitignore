@@ -1,0 +1,43 @@
+# Archivos del sistema Windows
+desktop.ini
+Thumbs.db
+
+# Bytecode compilado de Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Entornos virtuales
+venv/
+env/
+ENV/
+.venv/
+
+# Archivos de configuración de IDEs
+.vscode/
+.idea/
+
+# Archivos de logs
+*.log
+
+# Archivos temporales y de respaldo
+*.tmp
+*.bak
+
+# Archivos de distribución
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# Archivos de testing
+.coverage
+.tox/
+.pytest_cache/
+
+# Cachés de pip
+pip-wheel-metadata/
+
+# Archivos específicos de Mac
+.DS_Store
+Thumbs.db
