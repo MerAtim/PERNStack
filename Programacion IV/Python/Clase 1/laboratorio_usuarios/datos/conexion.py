@@ -3,7 +3,7 @@ from psycopg2 import pool
 from utilidades.logger_base import logger
 
 class Conexion:
-    _DATABASE = 'usuarios_db'
+    _DATABASE = 'test_bd'
     _USERNAME = 'postgres'
     _PASSWORD = 'admin'
     _HOST = 'localhost'

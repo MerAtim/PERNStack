@@ -1,13 +1,23 @@
 import logging
 
-logger = logging.getLogger("laboratorio_usuarios")  # le damos nombre al logger
-logger.setLevel(logging.DEBUG)  # le damos nivel de log, debe ser mayor al nivel de log de la libreria que usamos
+# Configuración básica del logging
+logging.basicConfig(
+    level=logging.DEBUG,
+    format="%(asctime)s: %(levelname)s [%(filename)s:%(lineno)s] %(message)s",
+    datefmt="%I:%M:%S %p",
+    handlers=[
+        logging.FileHandler("laboratorio_usuarios.log", encoding="utf-8"),
+        logging.StreamHandler(),
+    ],
+)
 
-# Configuramos el handler para que se guarde en un archivo
-file_handler = logging.FileHandler('laboratorio_usuarios.log')
-formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s') # el formato de salida tendra fecha, nivel y mensaje.
-file_handler.setFormatter(formatter)
+# Creamos el logger para exportar
+logger = logging.getLogger(__name__)
 
-# Evitar duplicados
-if not logger.hasHandlers():  # si no tiene handler, agrega el handler
-    logger.addHandler(file_handler)
+# Bloque de prueba opcional
+if __name__ == "__main__":
+    logger.debug("Prueba de mensaje de debug")
+    logger.info("Prueba de mensaje de info")
+    logger.warning("Prueba de mensaje de warning")
+    logger.error("Prueba de mensaje de error")
+    logger.critical("Prueba de mensaje de critical")
