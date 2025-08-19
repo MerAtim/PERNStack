@@ -1,8 +1,9 @@
 package UTN.presentacion;
 
+import java.util.Scanner;
+
 import UTN.datos.EstudianteDao;
 import UTN.dominio.Estudiante;
-import java.util.Scanner;
 
 public class SistemaEstudiantesApp {
 
@@ -94,12 +95,12 @@ public class SistemaEstudiantesApp {
                 }
 
                 System.out.println("""
-                                   ¿Que dato quiere modificar?
-                                   1. Nombre.
-                                   2. Apellido.
-                                   3. Teléfono.
-                                   4. Email.
-                                   5. Todos los datos.
+                                ¿Que dato quiere modificar?
+                                1. Nombre.
+                                2. Apellido.
+                                3. Teléfono.
+                                4. Email.
+                                5. Todos los datos.
                                    """); // Le consultamos al usuario que datos quiere modificar.
 
                 var eleccion = Integer.parseInt(consola.nextLine());
