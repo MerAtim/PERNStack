@@ -4,6 +4,7 @@
     list-style: none;
     text-decoration: none;
     font-family: sans-serif;
+    box-sizing: border-box;
     }
 
     .contenedor{
@@ -23,5 +24,3 @@
     .col-12{
     width:100%;
     }
-
-
