@@ -1,0 +1,10 @@
+*** Sistema de Estudiantes ***
+
+Listar estudiantes
+Buscar estudiantes
+Agregar estudiantes
+Modificar estudiantes
+Eliminar estudiantes
+Salir
+
+Elige una opción:
