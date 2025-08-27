@@ -1,0 +1,42 @@
+    *{
+    margin: 0px;
+    padding:0px;
+    list-style: none;
+    text-decoration: none;
+    font-family: sans-serif;
+    box-sizing: border-box;
+    }
+
+    .contenedor{
+    position: relative;
+    margin:auto;
+    width:100%;
+    height: auto;
+    }
+
+    .fila{
+    position: relative;
+    margin:auto;
+    width:100%;
+    height: auto;
+    clear: both; /*Clear hace que el elemento no se coloque en la siguiente fila, sino que se coloque en la misma fila. y Both es para que los elementos se coloquen en la misma fila.*/
+    display: table; /*Display Table hace que los elementos se coloquen en una tabla. */
+    }
+
+    .col-12{
+    width:100%;
+    }
+
+    [class*="col-"]{
+    float: left;
+    border:1 px solid black;
+    padding: 20px;
+    }
+
+    .col-6{
+    width:50%;
+    }
+
+    .col-4 {
+    width:33.333333333%;
+    }
