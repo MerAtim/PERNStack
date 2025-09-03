@@ -11,7 +11,7 @@ const productos = [
         productName:"Durazno por kilo",
         price: 2500,
         quantity: 20,
-        image: "../assets/durazno.jpg",
+        image: "../assets/durazno.jpeg",
     },
     {
         id: 3,
@@ -61,5 +61,26 @@ const productos = [
         price: 1900,
         quantity: 150,
         image: "../assets/pomelos.jpg"
-    }
+    },
+        {
+        id: 10,
+        productName:"Manzanas por kilo",
+        price: 1600,
+        quantity: 300,
+        image: "../assets/manzana.jpeg"
+    },
+        {
+        id: 11,
+        productName:"Frutillas por 250 gms",
+        price: 1500,
+        quantity: 4000,
+        image: "../assets/frutillas.jpeg"
+    },
+        {
+        id: 12,
+        productName:"Kiwi por kilo",
+        price: 6000,
+        quantity: 200,
+        image: "../assets/kiwi.jpeg"
+    },
 ];
