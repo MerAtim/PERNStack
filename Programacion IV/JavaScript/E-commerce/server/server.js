@@ -27,9 +27,9 @@ const client = new MercadoPagoConfig({
                 },
             ],
             back_urls:{
-                success: "https://www.youtube.com",
-                failure: "https://www.youtube.com/@onthecode",
-                pending: "https://www.youtube.com/live/bRb5GiXad1U"
+                success: "https://capymarket.netlify.app/gracias.html",
+                failure: "https://capymarket.netlify.app/gracias.html",
+                pending: "https://capymarket.netlify.app/gracias.html"
             },
             auto_return: "approved"
         };

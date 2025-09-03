@@ -443,3 +443,14 @@
             margin-bottom: 10px;
         }
 
+        body.fondo-alternativo, html.fondo-alternativo {
+            background-color: #feeed9;
+        }
+        
+        .imagen-gracias{
+            width: 95%;
+            height: 95%;
+            align-items: center;
+            justify-content: center;
+            margin-left: 9%;
+        }
