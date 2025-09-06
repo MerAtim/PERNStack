@@ -10,7 +10,6 @@ const mercadopago = new MercadoPago("APP_USR-cbd72d05-9943-4bd8-b058-e0804a07d0b
     locale: "es-AR"
     });
 
-    // Mostrar el carrito
     const displayCart = () => {
     modalContainer.innerHTML = "";
     modalContainer.style.display = "block";
@@ -34,10 +33,8 @@ const mercadopago = new MercadoPago("APP_USR-cbd72d05-9943-4bd8-b058-e0804a07d0b
 
     modalContainer.appendChild(createModalFooter(currentTotalPrice));
 
-    // Activar botón de checkout
     const checkoutButton = document.getElementById("checkout-btn");
-    //checkoutButton.addEventListener("click", handleCheckout);
-    // Checkout handler
+
     checkoutButton.addEventListener("click", async () => {
     try{
             var titulo = ""
@@ -48,7 +45,6 @@ const mercadopago = new MercadoPago("APP_USR-cbd72d05-9943-4bd8-b058-e0804a07d0b
                 description: "Compra de CapyMarket",
                 price: currentTotalPrice,
                 };
-
                 const response = await fetch("http://localhost:8080/create_preference", {
                     method: "POST",
                     headers: {
@@ -59,16 +55,13 @@ const mercadopago = new MercadoPago("APP_USR-cbd72d05-9943-4bd8-b058-e0804a07d0b
             const preference = await response.json()
             createCheckoutButton(preference.id);
         } catch(error){
-            //alert("Error inesperado.");
             console.log(error);
         }
     })
 };
 
-// Crear encabezado del modal
 const createModalHeader = () => {
     const header = document.createElement("div");
-
     const closeBtn = document.createElement("div");
     closeBtn.innerText = "❌";
     closeBtn.className = "modal-close";
@@ -82,7 +75,6 @@ const createModalHeader = () => {
     return header;
 };
 
-// Crear tarjeta de producto
 const createProductCard = (product) => {
     const body = document.createElement("div");
     body.className = "modal-body";
@@ -109,7 +101,6 @@ const createProductCard = (product) => {
     return body;
     };
 
-// Crear pie del modal
 const createModalFooter = (totalPrice) => {
     const footer = document.createElement("div");
     footer.className = "modal-footer";
@@ -124,13 +115,11 @@ const createModalFooter = (totalPrice) => {
     return footer;
     };
 
-    // Cerrar modal
     const closeModal = () => {
     modalContainer.style.display = "none";
     modalOverlay.style.display = "none";
 };
 
-// Renderizar botón de pago
 const createCheckoutButton = (preferenceId) => {
     const bricksBuilder = mercadopago.bricks();
     const renderComponent = async (bricksBuilder) => {
@@ -151,7 +140,6 @@ const createCheckoutButton = (preferenceId) => {
     renderComponent(bricksBuilder);
 }
 
-// Cantidad
 const incrementQuantity = id => {
     const productInCart = cart.find((product) => product.id === id);
     const productStock = productos.find((product) => product.id === id).quantity;
@@ -176,7 +164,6 @@ const decrementQuantity = (id) => {
     }
 };
 
-// Eliminar producto
 const removeProduct = (id) => {
     const productIndex = cart.findIndex((product) => product.id === id);
     if (productIndex !== -1) {
@@ -190,7 +177,6 @@ const removeProduct = (id) => {
     }
 };
 
-// Contador
 const displayCartCounter = () => {
     console.log("calling displayCartCounter")
     const cartLength = cart.reduce((acc, product) => acc + product.quantity, 0);
