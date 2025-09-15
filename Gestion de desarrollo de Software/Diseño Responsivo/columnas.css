@@ -5,6 +5,7 @@ list-style: none;
 text-decoration: none;
 font-family: sans-serif;
 box-sizing: border-box;
+background-color: #9e9c9c;
 }
 
 .contenedor{
@@ -30,7 +31,6 @@ padding: 20px;
 }
 
 header #logo{
-font-family:"Kaushan Script", cursive;
 font-size: 50px;
 text-align: center;
 line-height: 60px;
@@ -44,19 +44,62 @@ background:#ccc;
 color:white;
 }
 
-header center#icono1{
-background: blue;
+header center p{
+text-align: center;
+width:42px;
+line-height:42px;
+border-radius:100%;
+color:white;
 }
 
-header center#icono2{
-background: green;
+nav ul li {
+padding: 10px;
+text-align: center;
 }
 
-header center#icono3{
-background: red;
+nav ul li a{
+display: block;
+background: rgba(211, 201, 2, 0.75);
+font-family: "Poppins", cursive;
+color: rgb(0, 0, 0);
+line-height: 48px;
+border-radius: 10px;
+font-size: 25px;
 }
 
-@media(min-width:1200px){
+nav ul li a:hover{
+background: rosybrown;
+}
+nav ul li a:active{
+background: rgb(224, 22, 224);
+}
+
+#seccion3 center{
+padding:20px;
+}
+
+#seccion3 img{
+width: 150px;
+height: 150px;
+padding: 10px;
+}
+
+#seccion3 h1{
+font-family: "Carattere", cursive;
+font-size: 50px;
+padding: 10px;
+}
+
+#seccion3 p{
+padding:10px;
+font-family: "Poppins";
+}
+
+.redes svg{
+    width: 35px;
+}
+
+@media(min-width:1200px){/*Ordenadores/Laptops*/
 .col-lg-12{width:100%;}
 .col-lg-11{width:91.66666667%;}
 .col-lg-10{width:83.33333333%;}
@@ -69,9 +112,10 @@ background: red;
 .col-lg-3{width:25%;}
 .col-lg-2{width:16.66666667%;}
 .col-lg-1{width:8.333333333%;}
+.col-lg-0{display:none;}
 }
 
-@media(max-width:1199px) and (min-width: 992px){
+@media(max-width:1199px) and (min-width: 992px){ /*Tablets grandes/Laptops medianas*/
 .col-md-12{width:100%;}
 .col-md-11{width:91.66666667%;}
 .col-md-10{width:83.33333333%;}
@@ -84,9 +128,10 @@ background: red;
 .col-md-3{width:25%;}
 .col-md-2{width:16.66666667%;}
 .col-md-1{width:8.333333333%;}
+.col-md-0{display:none;}
 }
 
-@media(max-width:991px) and (min-width:768px){
+@media(max-width:991px) and (min-width:768px){ /*Tablets/Laptops pequeñas*/
 .col-sm-12{width:100%;}
 .col-sm-11{width:91.66666667%;}
 .col-sm-10{width:83.33333333%;}
@@ -99,9 +144,10 @@ background: red;
 .col-sm-3{width:25%;}
 .col-sm-2{width:16.66666667%;}
 .col-sm-1{width:8.333333333%;}
+.col-sm-0{display:none;}
 }
 
-@media(max-width:767px) {
+@media(max-width:767px) {/*Celus*/
 .col-xs-12{width:100%;}
 .col-xs-11{width:91.66666667%;}
 .col-xs-10{width:83.33333333%;}
@@ -114,4 +160,5 @@ background: red;
 .col-xs-3{width:25%;}
 .col-xs-2{width:16.66666667%;}
 .col-xs-1{width:8.333333333%;}
+.col-xs-0{display:none;}
 }
