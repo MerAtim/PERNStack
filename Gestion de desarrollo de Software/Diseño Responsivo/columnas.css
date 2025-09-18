@@ -5,7 +5,7 @@ list-style: none;
 text-decoration: none;
 font-family: sans-serif;
 box-sizing: border-box;
-background-color: #9e9c9c;
+background-color: #c1bdaa;
 }
 
 .contenedor{
@@ -26,30 +26,28 @@ display: table;
 
 [class*="col-"]{
 float: left;
-border:1 px solid black;
 padding: 20px;
 }
 
 header #logo{
 font-size: 50px;
 text-align: center;
-line-height: 60px;
+line-height: 70px;
 }
 
 header center{
-width:42px;
-line-height:42px;
-border-radius:100%;
-background:#ccc;
-color:white;
+width: auto;
+line-height: normal;
+border-radius: 50%;
+display: flex;
+justify-content: center;
+align-items: center;
+padding: 5px;
 }
 
 header center p{
-text-align: center;
-width:42px;
-line-height:42px;
-border-radius:100%;
-color:white;
+margin: 0;
+padding: 0;
 }
 
 nav ul li {
@@ -59,19 +57,21 @@ text-align: center;
 
 nav ul li a{
 display: block;
-background: rgba(211, 201, 2, 0.75);
+background: rgb(0, 0, 0);
 font-family: "Poppins", cursive;
-color: rgb(0, 0, 0);
+color: rgb(255, 255, 255);
 line-height: 48px;
 border-radius: 10px;
 font-size: 25px;
 }
 
 nav ul li a:hover{
-background: rosybrown;
+background: rgb(245, 253, 4);
+color: black;
 }
+
 nav ul li a:active{
-background: rgb(224, 22, 224);
+background: rgb(200, 255, 0);
 }
 
 #seccion3 center{
@@ -82,6 +82,23 @@ padding:20px;
 width: 150px;
 height: 150px;
 padding: 10px;
+}
+
+@keyframes brillo {
+    0% {
+        box-shadow: 0 0 10px rgb(251, 0, 255);
+    }
+    50% {
+        box-shadow: 0 0 40px rgb(212, 255, 0);
+    }
+    100% {
+        box-shadow: 0 0 10px rgb(0, 255, 191);
+    }
+}
+
+#seccion3 img:hover{
+    transform: scale(1,1);
+    animation: brillo 2s infinite;
 }
 
 #seccion3 h1{
@@ -95,11 +112,113 @@ padding:10px;
 font-family: "Poppins";
 }
 
-.redes svg{
-    width: 35px;
+.redes img {
+height: auto;
+max-width: 40px;
+object-fit: contain;
+display: block;
 }
 
-@media(min-width:1200px){/*Ordenadores/Laptops*/
+.redes:hover{
+    transform: scale(1.3);
+}
+
+.logo img:hover{
+    transform: scale(1.3);
+}
+
+#seccion4 aside ul li {
+    background: violet;
+    padding: 0; /* Lo movemos al <a> */
+    margin: 2px 10px;
+    list-style: none;
+    border-radius: 10px;
+    border: 2px solid black;
+    transition: background-color 0.3s ease;
+    text-align: center;
+}
+
+#seccion4 aside ul li:hover {
+    background-color: aqua;
+}
+
+#seccion4 aside ul li a {
+    display: block;
+    padding: 10px;
+    font-family: "Poppins";
+    font-weight: 600;
+    color: purple;
+    background: transparent; /* ¡Esto es clave! */
+    border-radius: 10px;
+}
+
+#seccion4 article h1{
+font-family: "Carattere";
+font-size: 50px;
+padding: 10px;
+text-align: center;
+}
+
+#seccion4 article p img{
+    float:left;
+    margin-right:20px;
+    height: auto;
+    padding: 5%;
+}
+
+#seccion4 img{
+    width: 10%;
+}
+
+#seccion4 article p{
+    margin: 5px 20px;
+    font-size:14px;
+    text-align: center;
+    font-family: "Poppins";
+}
+
+#seccion4 aside#der h1{
+    font-size: 25px;
+    text-align:center;
+    background: rgba(26, 255, 1, 0.52);
+    color:rgb(0, 0, 0);
+    margin-bottom: 5px;
+    border-radius: 8px;
+    font-family: "Poppins";
+    border: 2px solid black;
+    padding: 3px;
+}
+
+#seccion4 aside#der input{
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    font-family: "Poppins";
+    border-radius: 5px;
+}
+
+.btn-enviar{
+    background-color: rgba(0, 255, 255, 0.413);
+    font-weight: bold;
+}
+
+.btn-enviar:hover{
+    background-color: rgb(191, 255, 0);
+    color: black;
+}
+
+footer{
+    padding:20xp 10px;
+}
+
+footer div{
+    background: rgb(156, 14, 156);
+    text-align: center;
+    line-height:50px;
+    color:white;
+}
+
+@media(min-width:1200px){/*Ordenadores-Laptops*/
 .col-lg-12{width:100%;}
 .col-lg-11{width:91.66666667%;}
 .col-lg-10{width:83.33333333%;}
@@ -110,12 +229,16 @@ font-family: "Poppins";
 .col-lg-5{width:41.66666666%;}
 .col-lg-4{width:33.33333333%;}
 .col-lg-3{width:25%;}
-.col-lg-2{width:16.66666667%;}
+.col-lg-2{width:20%;}
 .col-lg-1{width:8.333333333%;}
 .col-lg-0{display:none;}
+
+#seccion4 article p img{
+    width: 50%,
+}
 }
 
-@media(max-width:1199px) and (min-width: 992px){ /*Tablets grandes/Laptops medianas*/
+@media(max-width:1199px) and (min-width: 992px){ /*Tablets grandes-Laptops medianas*/
 .col-md-12{width:100%;}
 .col-md-11{width:91.66666667%;}
 .col-md-10{width:83.33333333%;}
@@ -129,9 +252,13 @@ font-family: "Poppins";
 .col-md-2{width:16.66666667%;}
 .col-md-1{width:8.333333333%;}
 .col-md-0{display:none;}
+
+#seccion4 article p img{
+    width: 60%,
+}
 }
 
-@media(max-width:991px) and (min-width:768px){ /*Tablets/Laptops pequeñas*/
+@media(max-width:991px) and (min-width:768px){ /*Tablets-Laptops pequeñas*/
 .col-sm-12{width:100%;}
 .col-sm-11{width:91.66666667%;}
 .col-sm-10{width:83.33333333%;}
@@ -145,6 +272,10 @@ font-family: "Poppins";
 .col-sm-2{width:16.66666667%;}
 .col-sm-1{width:8.333333333%;}
 .col-sm-0{display:none;}
+
+#seccion4 article p img{
+    width: 100%;
+}
 }
 
 @media(max-width:767px) {/*Celus*/
@@ -161,4 +292,9 @@ font-family: "Poppins";
 .col-xs-2{width:16.66666667%;}
 .col-xs-1{width:8.333333333%;}
 .col-xs-0{display:none;}
+
+#seccion4 article p img{
+    width: 100%;
+    margin-bottom: 20px;
+}
 }
