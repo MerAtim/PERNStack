@@ -8,6 +8,7 @@ public class TiendaLibrosApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(TiendaLibrosApplication.class, args);
-	}
+        System.out.println("Tienda de Libros Application Started");
 
+	}
 }
