@@ -31,6 +31,6 @@ export const singup = async (req, res) => {
     }
 };
 
-export const logout = (req, res) => res.send('Log out exitoso!');
+export const singout = (req, res) => res.send('Log out exitoso!');
 
 export const profile = (req, res) => res.send("Perfil del usuario");
