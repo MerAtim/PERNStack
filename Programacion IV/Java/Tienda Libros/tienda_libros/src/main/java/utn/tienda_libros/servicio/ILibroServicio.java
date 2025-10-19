@@ -10,5 +10,6 @@ public interface ILibroServicio {
     public Libro buscarLibroPorId(Integer idLibro);
     public void guardarLibro(Libro libro);
     public void eliminarLibro(Libro libro);
+    public Libro buscarLibroPorNombreYAutor(String nombreLibro, String autor);
 
 }

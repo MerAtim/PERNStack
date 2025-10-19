@@ -30,7 +30,10 @@ public class LibroServicio implements ILibroServicio{
     }
 
     @Override
-    public void eliminarLibro(Libro libro) {
-        libroRepositorio.delete(libro);
+    public void eliminarLibro(Libro libro) {libroRepositorio.delete(libro); }
+
+    @Override
+    public Libro buscarLibroPorNombreYAutor(String nombreLibro, String autor) {
+        return libroRepositorio.findByNombreLibroAndAutor(nombreLibro, autor);
     }
 }
