@@ -1,8 +1,7 @@
 import {pool} from '../db.js';
 
 export const listarTareas = async (req, res) => {
-    const resultado = await pool.query("SELECT * FROM tareas");
-    console.log(resultado);
+    const resultado = await pool.query("SELECT * FROM tareas WHERE id_usuario = $1", [req.usuarioId]);
     return res.json(resultado.rows);
 }
 
@@ -16,7 +15,7 @@ export const listarTarea = async (req, res) => {
 
 export const crearTarea = async (req, res, next) => { const {titulo, descripcion} = req.body;
     try{
-        const result = await pool.query("INSERT INTO tareas(titulo, descripcion) VALUES($1, $2) RETURNING *", [titulo, descripcion]);
+        const result = await pool.query("INSERT INTO tareas(titulo, descripcion, id_usuario) VALUES($1, $2, $3) RETURNING *", [titulo, descripcion, req.usuarioId]);
         res.json(result.rows[0]);
         console.log(result.rows[0]);
     }catch(error){

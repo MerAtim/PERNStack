@@ -1,6 +1,6 @@
 import { Router } from "express";
 import { actualizarTarea, crearTarea, eliminarTarea, listarTarea, listarTareas } from "../controllers/tareas.controller.js";
-import {isAuth} from "../middlewares/authmiddleware.js"
+import {isAuth} from "../middlewares/auth.middleware.js"
 
 const router = Router();
 

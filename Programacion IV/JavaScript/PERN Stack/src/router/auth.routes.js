@@ -1,14 +1,14 @@
 import Router from 'express-promise-router';
-import { singout, profile, singin, singup } from '../controllers/auth.controller.js';
-import { isAuth } from "../middlewares/authmiddleware.js";
+import { signout, profile, signin, signup } from '../controllers/auth.controller.js';
+import { isAuth } from "../middlewares/auth.middleware.js";
 
 const router = new Router();
 
-router.post('/singin', singin);
+router.post('/signin', signin);
 
-router.post('/singup', singup);
+router.post('/signup', signup);
 
-router.post('/singout', singout);
+router.post('/signout', signout);
 
 router.get('/profile', isAuth, profile);
 
