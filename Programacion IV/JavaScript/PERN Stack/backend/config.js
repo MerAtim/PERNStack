@@ -11,3 +11,6 @@ export const PG_USER = process.env.PG_USER || 'postgres';
 export const PG_PASSWORD = process.env.PG_PASSWORD || 'admin';
 
 export const ORIGIN = process.env.ORIGIN || 'http://localhost:5173';
+
+export const JWT_SECRET = process.env.JWT_SECRET || 'xyz123';
+

@@ -20,9 +20,9 @@ export const signin = async (req, res) => {
     const token = await createAccessToken({ id: result.rows[0].id });
     console.log(result);
     res.cookie("token", token, {
-        httpOnly: false,
-        secure: false,
-        sameSite: "lax",
+        httpOnly: true,
+        secure: process.env.NODE_ENV === 'production',
+        sameSite: "strict",
         maxAge: 24 * 60 * 60 * 1000 // 1 day
     });
     return res.json({ user: result.rows[0], token});
@@ -44,11 +44,11 @@ export const signup = async (req, res, next) => {
         const token = await createAccessToken({ id: result.rows[0].id });
         console.log(result);
         res.cookie("token", token, {
-            httpOnly: false,
-            secure: false,
-            sameSite: "lax",
-            maxAge: 24 * 60 * 60 * 1000 // 1 day
-        });
+        httpOnly: true,
+        secure: process.env.NODE_ENV === 'production',
+        sameSite: "strict",
+        maxAge: 24 * 60 * 60 * 1000
+    });
         return res.json({ user: result.rows[0], token });
     } catch (err) {
         if (err.code === "23505"){
