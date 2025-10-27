@@ -6,9 +6,9 @@ export const listarTareas = async (req, res) => {
 }
 
 export const listarTarea = async (req, res) => {
-    const resultado = await pool.query("SELECT * FROM tareas WHERE id = $1", [req.params.id]);
+    const resultado = await pool.query("SELECT * FROM tareas WHERE id = $1 AND id_usuario = $2", [req.params.id, req.usuarioId]);
     if (resultado.rowCount === 0){
-        return res.status(404).json({message: "La tarea no existe."});
+        return res.status(404).json({message: "La tarea no existe o no tenés permiso para verla."});
     }
     return res.json(resultado.rows[0]);
 }
@@ -29,17 +29,17 @@ export const crearTarea = async (req, res, next) => { const {titulo, descripcion
 export const actualizarTarea = async (req, res) => {
     const {titulo, descripcion} = req.body;
     const id = req.params.id;
-    const resultado = await pool.query("UPDATE tareas SET titulo = $1, descripcion = $2 WHERE id = $3 RETURNING *", [titulo, descripcion, id]);
+    const resultado = await pool.query("UPDATE tareas SET titulo = $1, descripcion = $2 WHERE id = $3 AND id_usuario = $4 RETURNING *", [titulo, descripcion, id, req.usuarioId]);
     if (resultado.rowCount === 0){
-            return res.status(404).json({message: "La tarea no existe."});
-        }
-        return res.json(resultado.rows[0]);
+        return res.status(404).json({message: "La tarea no existe o no tenés permiso para editarla."});
+    }
+    return res.json(resultado.rows[0]);
 }
 
 export const eliminarTarea = async (req, res) => {
-    const resultado = await  pool.query("DELETE FROM tareas WHERE id = $1", [req.params.id]);
+    const resultado = await pool.query("DELETE FROM tareas WHERE id = $1 AND id_usuario = $2", [req.params.id, req.usuarioId]);
     if (resultado.rowCount === 0){
-            return res.status(404).json({message: "No existe una tarea con ese id."});
-        }
-        return res.sendStatus(204);
+        return res.status(404).json({message: "No existe una tarea con ese id o no tenés permiso para eliminarla."});
+    }
+    return res.sendStatus(204);
 }

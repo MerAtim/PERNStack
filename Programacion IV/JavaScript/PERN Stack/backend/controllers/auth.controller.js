@@ -20,8 +20,9 @@ export const signin = async (req, res) => {
     const token = await createAccessToken({ id: result.rows[0].id });
     console.log(result);
     res.cookie("token", token, {
-        httpOnly: true,
-        sameSite: "none",
+        httpOnly: false,
+        secure: false,
+        sameSite: "lax",
         maxAge: 24 * 60 * 60 * 1000 // 1 day
     });
     return res.json({ user: result.rows[0], token});
@@ -43,18 +44,18 @@ export const signup = async (req, res, next) => {
         const token = await createAccessToken({ id: result.rows[0].id });
         console.log(result);
         res.cookie("token", token, {
-            httpOnly: true,
+            httpOnly: false,
             secure: false,
-            sameSite: "none",
+            sameSite: "lax",
             maxAge: 24 * 60 * 60 * 1000 // 1 day
         });
         return res.json({ user: result.rows[0], token });
     } catch (err) {
-        if (err === "23505"){
-            return res.status(400).json("El correo ya existe en la base de datos");
+        if (err.code === "23505"){
+            return res.status(400).json({ message: "El correo ya existe en la base de datos" });
         }
+        console.error("Error en signup:", err);
         next(err);
-
     }
 };
 
