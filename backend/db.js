@@ -7,6 +7,9 @@ export const pool = new pg.Pool({
     user: PG_USER,
     password: PG_PASSWORD,
     database: PG_DATABASE,
+    ssl: {
+        rejectUnauthorized: false
+    }
 });
 
 pool.on("connect", () => {
