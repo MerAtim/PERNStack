@@ -1,5 +1,26 @@
 # Proyecto PERN Stack
 
+> **👤 Autora:** Maria Mercedes Atim
+> **📅 Fecha:** Octubre 2025
+> **🎓 Institución:** TUP - Programación IV - Cuarto Semestre
+> **📦 Repositorio Original:** https://github.com/MerAtim/PERNStack
+> **🌐 App Desplegada:** https://pern-frontend-ynac.onrender.com
+
+---
+
+## ⚠️ AVISO IMPORTANTE - INTEGRIDAD ACADÉMICA
+
+Este proyecto fue desarrollado como parte de una tarea académica por **Maria Mercedes Atim**.
+
+**Cualquier uso, copia o presentación de este código como trabajo propio sin la debida atribución constituye PLAGIO ACADÉMICO** y está sujeto a las políticas de integridad académica de la institución educativa.
+
+Si deseas usar este código como referencia o aprendizaje, por favor:
+- ✅ Dale crédito al autor original
+- ✅ Cita este repositorio en tu documentación
+- ✅ No lo presentes como trabajo propio
+
+---
+
 ## *Carpinchos Programando*
 
 Aplicación web full-stack para gestión de tareas con autenticación de usuarios, desarrollada con **PostgreSQL, Express, React y Node.js**.
