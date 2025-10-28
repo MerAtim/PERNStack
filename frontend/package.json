@@ -9,10 +9,11 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "tailwind:init": "tailwindcss init -p",
-    "start": "serve dist -p $PORT"
+    "start": "serve -s dist -l $PORT"
   },
   "dependencies": {
     "axios": "^1.12.2",
+    "clsx": "^2.1.0",
     "js-cookie": "^3.0.5",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
