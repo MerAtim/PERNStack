@@ -1,6 +1,5 @@
-<<<<<<< HEAD
 ![Repositorio del 4to Semestre de TUP](https://raw.githubusercontent.com/MerAtim/CuartoSemestreUTN/main/Assets/Repositorio%20del%204to%20Semestre%20de%20TUP.png)
-=======
+
 # Proyecto PERN Stack
 
 > **👤 Autora:** Maria Mercedes Atim
@@ -380,4 +379,3 @@ export const ProtectedRoute = ({ isAllowed, redirectTo }) => {
 ## Autor
 
 **Carpinchos Programando** - TUP Cuarto Semestre - Programación IV
->>>>>>> 7c250b13d875c69ce1c6266e4a0cf38ae36058ef
